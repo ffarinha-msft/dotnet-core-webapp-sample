@@ -25,7 +25,7 @@ namespace dotnet_core_webapp_sample.Pages
 
         public async Task OnGet()
         {
-            var SA_ConnectionString = _configuration.GetConnectionString("BlobConnection");
+            var SA_ConnectionString = Environment.GetEnvironmentVariable("BlobConnection");
             // Create a BlobServiceClient object which will be used to create a container client
             BlobServiceClient blobServiceClient = new BlobServiceClient(SA_ConnectionString);
 
